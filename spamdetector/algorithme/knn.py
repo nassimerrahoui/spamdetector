@@ -76,9 +76,7 @@ emailsRaw = str(Path.home()) + r"\IdeaProjects\spamdetector\spamdetector\rawData
 emails = pd.read_csv(emailsRaw, names=tag)
 emailsClean = pd.DataFrame(emails, columns=tag)
 np.set_printoptions(suppress=True, threshold=np.nan)
-
 X = emailsClean
-
 X = X.drop(labels=["is_spam", "word_freq_make", "word_freq_george", "word_freq_1999", "char_freq_("], axis=1)
 
 y = emailsClean["is_spam"]

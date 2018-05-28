@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+import pandas as pd
+
+tag = [
+    "max", "average", "stddev", "coeffvar"
+]
 
 stats = [
     [4.54, 0.10455, 0.30536, 292]
@@ -59,3 +65,9 @@ stats = [
     , [15841, 283.29, 606.35, 214]
     , [1, 0.39404, 0.4887, 124]
 ]
+
+
+def getStat():
+    global statClean
+    statClean = pd.DataFrame(stats, columns=tag)
+    return statClean
