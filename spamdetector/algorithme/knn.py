@@ -72,7 +72,7 @@ tag = [
 ]
 
 # import some data to play with
-emailsRaw = str(Path.home()) + "\IdeaProjects\spamdetector\spamdetector\dataRaw\spambase.data"
+emailsRaw = str(Path.home()) + r"\IdeaProjects\spamdetector\spamdetector\rawData\spambase.data"
 emails = pd.read_csv(emailsRaw, names=tag)
 emailsClean = pd.DataFrame(emails, columns=tag)
 np.set_printoptions(suppress=True, threshold=np.nan)
