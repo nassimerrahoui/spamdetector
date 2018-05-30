@@ -8,5 +8,5 @@ if __name__ == '__main__':
     naiveBayes = NaiveBayes(clean_data.getDf(), clean_data.getNames())
     naiveBayes.detailed_result()
 
-    knn = Knn(clean_data.getDf(), clean_data.getNames(), 0.20, 4)
+    knn = Knn(clean_data.getDf(), clean_data.getNames(), 0.20, 5)
     knn.standardisation()

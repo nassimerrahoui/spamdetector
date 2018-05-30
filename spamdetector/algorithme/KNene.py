@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import classification_report
+from sklearn import metrics
 from spamdetector.cleanData.Statistics import Statistics
 import numpy as np
 
@@ -49,4 +49,7 @@ class Knn:
 
         print()
         print("************************* Knn Kawaii Results ~ <3 *****************************")
-        print(classification_report(y_test, y_pred))
+        print("rapport de classification :")
+        print(metrics.classification_report(y_test, y_pred))
+        print("score de précision :")
+        print(metrics.accuracy_score(y_test, y_pred))
