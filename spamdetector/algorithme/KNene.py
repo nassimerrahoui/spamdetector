@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
+from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
@@ -26,12 +27,13 @@ class Knn:
             labels.append(i)
         X = self.emailsClean
         X = X.drop(labels=labels, axis=1)
-        return X
+        print(type(X))
+        return X #<class 'pandas.core.frame.DataFrame'>
 
     def getY(self):
         y = self.emailsClean["is_spam"]
         y = y.transpose()
-        return y
+        return y #<class 'pandas.core.series.Series'>
 
     def standardisation(self):
         X_train, X_test, y_train, y_test = train_test_split(self.getX(), self.getY(), test_size=self.test_size)
@@ -49,6 +51,8 @@ class Knn:
 
         print()
         print("************************* Knn Kawaii Results ~ <3 *****************************")
+        print("matrice de confusion :")
+        print(confusion_matrix(y_test, y_pred))
         print("rapport de classification :")
         print(metrics.classification_report(y_test, y_pred))
         print("score de précision :")
