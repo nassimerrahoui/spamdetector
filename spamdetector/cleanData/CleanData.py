@@ -6,6 +6,7 @@ import numpy as np
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 
+
 FILE_spambase_header_names = 'rawData/spambase.header_names'
 FILE_spambase_data = 'rawData/spambase.data'
 
@@ -19,6 +20,8 @@ class CleanData:
         self.selected_words = ["char_freq_$", "char_freq_!", "word_freq_order", "word_freq_free", "word_freq_money", "word_freq_receive",
         "word_freq_000", "word_freq_george", "word_freq_650", "word_freq_lab",
         "word_freq_labs", "word_freq_edu", "word_freq_conference", "word_freq_meeting"]
+
+
 
 
     def getNames(self):

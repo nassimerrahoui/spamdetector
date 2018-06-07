@@ -8,8 +8,11 @@ from sklearn.metrics import accuracy_score
 
 class NaiveBayes:
     def __init__(self, df, names):
+       # df_drop_is_spam = df.drop('is_spam',1)
+
         self.data_X = df[names].loc[0:(int)((len(df) - 1) * 0.8)].values
         self.data_X_predict = df[names].loc[(int)((len(df)) * 0.8):len(df)].values
+        pprint.pprint(self.data_X)
         self.data_Y = df["is_spam"].loc[0:(int)((len(df) - 1) * 0.8)]
         self.data_Y_predict = df["is_spam"].loc[(int)((len(df)) * 0.8):len(df)]
 
