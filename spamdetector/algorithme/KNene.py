@@ -50,7 +50,7 @@ class Knn:
         y_pred = classifier.predict(X_test)
 
         print()
-        print("************************* Knn Kawaii Results ~ <3 *****************************")
+        print("************************* Knn Results *****************************")
         print("matrice de confusion :")
         print(confusion_matrix(y_test, y_pred))
         print("rapport de classification :")
