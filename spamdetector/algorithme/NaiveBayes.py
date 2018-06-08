@@ -11,7 +11,7 @@ from sklearn import metrics
 
 class NaiveBayes:
 
-    def __init__(self, df, names, test_size, path_img):
+    def __init__(self, df, names, test_size):
         np.set_printoptions(suppress=True, threshold=np.nan)
 
         #Select data labels instead of mails
@@ -24,7 +24,6 @@ class NaiveBayes:
         self.test_size = test_size
         self.data_X = names3
         self.data_Y = names2[57]
-        self.path_img = path_img
 
 
     def detailed_result(self):
@@ -55,6 +54,7 @@ class NaiveBayes:
         print(metrics.classification_report(y_test, y_pred))
         print("score de précision :")
         print(metrics.accuracy_score(y_test, y_pred))
+        return metrics.accuracy_score(y_test, y_pred)
 
     def getData_X(self):
         return self.data_X

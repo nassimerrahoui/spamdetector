@@ -1,5 +1,13 @@
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
+<<<<<<< HEAD
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, confusion_matrix
+
+
+class RandomForest:
+    def __init__(self, tr):
+        self.lR = RandomForestClassifier()
+=======
 from sklearn.metrics import accuracy_score, precision_score,recall_score, f1_score,roc_auc_score
 import time
 tmps1=time.time()
@@ -7,6 +15,7 @@ tmps1=time.time()
 class RandomForest:
     def __init__(self, tr):
         self.lR = RandomForestClassifier(n_jobs = -1, random_state=9,oob_score = False, bootstrap=True)
+>>>>>>> 465cb7bbe69a445755559a76e12b73859c9b43e5
         self.tr = tr
 
 
@@ -21,6 +30,14 @@ class RandomForest:
         auc_RF = roc_auc_score(Y_test, predict_lR)
         print('accuracy ', accuracy_RF, 'precision ', precision_RF, 'recall ', recall_RF, 'f1_score ', f1_score_RF,
               'auc ', auc_RF)
+        print("************************* Random forest Results *****************************")
+        print("matrice de confusion :")
+        print(confusion_matrix(Y_test, predict_lR))
+        print("rapport de classification :")
+        print(metrics.classification_report(Y_test, predict_lR))
+        print("score de précision :")
+        print(metrics.accuracy_score(Y_test, predict_lR))
+        return metrics.accuracy_score(Y_test, predict_lR)
 
 tmps2=time.time()-tmps1
 print("Temps d'execution = ", tmps2)
