@@ -4,10 +4,11 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-class Unsupervised:
-    def __init__(self, tr, cleanData):
+class Classification_hiérarchique:
+    def __init__(self, tr, cleanData, file_img):
         self.tr = tr
         self.cleanData = cleanData
+        self.file_img = file_img+"Classification_hiérarchique"
 
     def result(self):
         data_df = self.cleanData.getSpambase_data()
@@ -34,4 +35,4 @@ class Unsupervised:
                    leaf_rotation=90,
                    leaf_font_size=6,
                    )
-        plt.show()
+        plt.save(self.file_img)

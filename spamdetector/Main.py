@@ -1,8 +1,10 @@
 from spamdetector.cleanData.CleanData import CleanData
 from spamdetector.cleanData.Training import Training
-from spamdetector.unsupervised.Unsupervised import Unsupervised
+from spamdetector.unsupervised.Classification_hiérarchique import Classification_hiérarchique
 from spamdetector.unsupervised.Tsne import Tsne
-from spamdetector.cleanData.Load_data import Load_data
+from spamdetector.unsupervised.DBSCAN import DBSCANalgo
+from spamdetector.algorithme.RandomForest import RandomForest
+from spamdetector.algorithme.LogisticRegression import LogisticRegressionAlgo
 
 FILE_spambase_header_names = r'./rawData/spambase.header_names'
 FILE_spambase_data = r'./rawData/spambase.data'
@@ -12,7 +14,7 @@ FILE_img = r'./outPut/graph'
 if __name__ == '__main__':
     clean_data = CleanData()
     training = Training(FILE_spambase_header_names, FILE_spambase_data)
-    load_data = Load_data(clean_data)
+
 
     """Backpropagation"""
     #backpropagation = Backpropagation(training,FILE_spambase_data)
@@ -84,7 +86,15 @@ if __name__ == '__main__':
     """Tsne"""
     print("############iris_df############")
     # Neighboors define classes of a row
-    tsne = Tsne(load_data, FILE_img)
-    tsne.result()
+    #tsne = Tsne(clean_data, FILE_img)
+    #tsne.result()
+    print("-------------------------------------------")
+    print("")
+
+    """DBSCANalgo"""
+    print("############iris_df############")
+    # Neighboors define classes of a row
+    #db = DBSCANalgo(clean_data, FILE_img)
+    #db.result()
     print("-------------------------------------------")
     print("")
