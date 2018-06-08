@@ -8,12 +8,18 @@ from spamdetector.algorithme.NaiveBayes import NaiveBayes
 from spamdetector.algorithme.RandomForest import RandomForest
 from spamdetector.cleanData.CleanData import CleanData
 from spamdetector.cleanData.Training import Training
-from spamdetector.unsupervised.Unsupervised import Unsupervised
+from spamdetector.unsupervised.Classification_hiérarchique import Classification_hiérarchique
 from spamdetector.unsupervised.Tsne import Tsne
+<<<<<<< HEAD
 from spamdetector.cleanData.Load_data import Load_data
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 import pandas as pd
+=======
+from spamdetector.unsupervised.DBSCAN import DBSCANalgo
+from spamdetector.algorithme.RandomForest import RandomForest
+from spamdetector.algorithme.LogisticRegression import LogisticRegressionAlgo
+>>>>>>> 465cb7bbe69a445755559a76e12b73859c9b43e5
 
 FILE_spambase_header_names = r'./rawData/spambase.header_names'
 FILE_spambase_data = r'./rawData/spambase.data'
@@ -23,7 +29,7 @@ FILE_img = r'./outPut/graph'
 if __name__ == '__main__':
     clean_data = CleanData()
     training = Training(FILE_spambase_header_names, FILE_spambase_data)
-    load_data = Load_data(clean_data)
+
 
     """Backpropagation"""
     print("############Backpropagation############")
@@ -87,7 +93,6 @@ if __name__ == '__main__':
     ax.set_ylabel('Accuracy')
     ax.set_xticklabels(accuracy_labels)
 
-
     ax.yaxis.set_major_formatter(mtick.FormatStrFormatter('%.2f'))
 
     rects = ax.patches
@@ -124,3 +129,18 @@ if __name__ == '__main__':
                                         # positive and negative values.
 
     plt.show()
+    """Tsne"""
+    print("############iris_df############")
+    # Neighboors define classes of a row
+    #tsne = Tsne(clean_data, FILE_img)
+    #tsne.result()
+    print("-------------------------------------------")
+    print("")
+
+    """DBSCANalgo"""
+    print("############iris_df############")
+    # Neighboors define classes of a row
+    #db = DBSCANalgo(clean_data, FILE_img)
+    #db.result()
+    print("-------------------------------------------")
+    print("")

@@ -25,7 +25,18 @@ class CleanData:
     def getClean_df(self):
         return self.spambase_data.pop('is_spam')
 
+    def data(self):
+        return self.spambase_data.drop('is_spam',1)
 
+    def names_(self):
+        names = self.getNames()
+        del names[-1]
+        del names[54]
+        del names[26]
+        return names
+
+    def target(self):
+        return self.getSpambase_data()['is_spam']
 
     def getNames(self):
         return self.names #<class 'list'> only labels
