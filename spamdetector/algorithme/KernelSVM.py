@@ -8,7 +8,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 class KernelSVM:
 
-    def __init__(self, df, names, test_size, path_img):
+    def __init__(self, df, names, test_size):
         self.emailsClean = pd.DataFrame(df, columns=names)
         self.test_size = test_size
         self.statistics = Statistics()
@@ -36,7 +36,10 @@ class KernelSVM:
         y_pred = svclassifier.predict(X_test)
         print()
         print("************************* Kernel SVM Results *****************************")
+        print("matrice de confusion :")
+        print(confusion_matrix(y_test, y_pred))
         print("rapport de classification :")
         print(metrics.classification_report(y_test, y_pred))
         print("score de précision :")
         print(metrics.accuracy_score(y_test, y_pred))
+        return metrics.accuracy_score(y_test, y_pred)

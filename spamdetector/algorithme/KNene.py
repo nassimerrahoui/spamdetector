@@ -12,12 +12,11 @@ import numpy as np
 
 class Knn:
 
-    def __init__(self, df, names, test_size, neighbors, path_img):
+    def __init__(self, df, names, test_size, neighbors):
         self.emailsClean = pd.DataFrame(df, columns=names)
         self.test_size = test_size
         self.neighbors = neighbors
         self.statistics = Statistics()
-        self.path_img = path_img
 
 
     def getX(self):
@@ -59,3 +58,4 @@ class Knn:
         print(metrics.classification_report(y_test, y_pred))
         print("score de précision :")
         print(metrics.accuracy_score(y_test, y_pred))
+        return metrics.accuracy_score(y_test, y_pred)

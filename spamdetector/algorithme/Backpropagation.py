@@ -1,7 +1,9 @@
 from numpy.core.tests.test_mem_overlap import xrange
-from sklearn import preprocessing
+from sklearn import preprocessing, metrics
 import numpy as np
 import pprint
+
+from sklearn.metrics import confusion_matrix
 
 NB_TRAIN = (int)(4600 * 0.8)
 
@@ -9,10 +11,9 @@ NB_TRAIN = (int)(4600 * 0.8)
 # TODO le temps pour chaque algo !!
 class Backpropagation:
 
-    def __init__(self, tr, file_data, path_img):
+    def __init__(self, tr, file_data):
         self.tr = tr
         self.file_data = file_data
-        self.path_img = path_img
         self.X = []
         self.Y = []
 
@@ -92,8 +93,16 @@ class Backpropagation:
                 correct += 1
 
         total = len(layer_2)
-        accuracy = correct * 100.0 / len(layer_2)
+        accuracy = correct / len(layer_2)
         print("total = ", total)
         print("correct =", correct)
         print("accuracy = ", accuracy)
-        return total, correct, accuracy
+
+        print("************************* Kernel SVM Results *****************************")
+        print("matrice de confusion :")
+        print(confusion_matrix(Y_test, layer_2))
+        print("rapport de classification :")
+        print(metrics.classification_report(Y_test, layer_2))
+        print("score de précision :")
+        print(metrics.accuracy_score(Y_test, layer_2))
+        return accuracy
