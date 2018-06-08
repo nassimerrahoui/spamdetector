@@ -10,16 +10,12 @@ from spamdetector.cleanData.CleanData import CleanData
 from spamdetector.cleanData.Training import Training
 from spamdetector.unsupervised.Classification_hiérarchique import Classification_hiérarchique
 from spamdetector.unsupervised.Tsne import Tsne
-<<<<<<< HEAD
-from spamdetector.cleanData.Load_data import Load_data
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 import pandas as pd
-=======
 from spamdetector.unsupervised.DBSCAN import DBSCANalgo
 from spamdetector.algorithme.RandomForest import RandomForest
 from spamdetector.algorithme.LogisticRegression import LogisticRegressionAlgo
->>>>>>> 465cb7bbe69a445755559a76e12b73859c9b43e5
 
 FILE_spambase_header_names = r'./rawData/spambase.header_names'
 FILE_spambase_data = r'./rawData/spambase.data'

@@ -1,21 +1,13 @@
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
-<<<<<<< HEAD
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, confusion_matrix
-
-
-class RandomForest:
-    def __init__(self, tr):
-        self.lR = RandomForestClassifier()
-=======
-from sklearn.metrics import accuracy_score, precision_score,recall_score, f1_score,roc_auc_score
 import time
+
 tmps1=time.time()
 
 class RandomForest:
     def __init__(self, tr):
         self.lR = RandomForestClassifier(n_jobs = -1, random_state=9,oob_score = False, bootstrap=True)
->>>>>>> 465cb7bbe69a445755559a76e12b73859c9b43e5
         self.tr = tr
 
 

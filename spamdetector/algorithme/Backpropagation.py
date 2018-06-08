@@ -8,7 +8,6 @@ from sklearn.metrics import confusion_matrix
 NB_TRAIN = (int)(4600 * 0.8)
 
 
-# TODO le temps pour chaque algo !!
 class Backpropagation:
 
     def __init__(self, tr, file_data):
