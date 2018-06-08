@@ -10,7 +10,7 @@ from spamdetector.algorithme.RandomForest import RandomForest
 
 from spamdetector.unsupervised.DBSCAN import DBSCAN
 from spamdetector.unsupervised.Tsne import Tsne
-from spamdetector.unsupervised.Unsupervised import Unsupervised
+from spamdetector.unsupervised.Classification_hiérarchique import Unsupervised
 
 
 FILE_spambase_header_names = r'./rawData/spambase.header_names'
@@ -26,7 +26,8 @@ class Algos:
 
         self.classifiers = [
             ("Back propagation", Backpropagation(self.training,FILE_spambase_data)),
-            ("Back propagation", Backpropagation(self.training, FILE_spambase_data)),
+            ("LogisticRegression", LogisticRegression(self.training, FILE_spambase_data)),
+            ("RandomForest", RandomForest(self.training, FILE_spambase_data)),
         ]
 
 
@@ -48,7 +49,6 @@ class Algos:
             recall = round(recall_score(Y_test, predict ), 4)*100
             f1_score_ = round(f1_score(Y_test, predict ), 4)*100
             auc = round(roc_auc_score(Y_test, predict ), 4)*100
-            # probas = algo.predict_proba(main.X_test)
 
             print("algo : ", name, ':  Accuracy - ', accuracy, ', Precision - ', precision, ', Recall - ', recall,
                   ', F1_score - ', f1_score_, ' AUC - ', auc)

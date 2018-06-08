@@ -5,11 +5,10 @@ from sklearn.metrics import accuracy_score
 
 class LogisticRegressionAlgo:
 
-    def __init__(self, tr, path_img):
+    def __init__(self, tr):
         self.lR = LogisticRegression()
         self.tr = tr
         self.X_train, self.X_test, self.Y_train, self.Y_test = self.tr.divide()
-        self.path_img = path_img
 
 
     def result(self):

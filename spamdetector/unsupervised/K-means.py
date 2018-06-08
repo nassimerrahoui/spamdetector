@@ -19,7 +19,7 @@ class K_means:
         model.fit(self.iris_df.data)
 
         # Predicitng a single input
-        predicted_label = model.predict([[7.2, 3.5, 0.8, 1.6]])
+        predicted_label = model.predict(self.iris_df.data[0])
 
         # Prediction on the entire data
         all_predictions = model.predict(self.iris_df.data)
@@ -27,3 +27,4 @@ class K_means:
         # Printing Predictions
         print(predicted_label)
         print(all_predictions)
+        return predicted_label, all_predictions
