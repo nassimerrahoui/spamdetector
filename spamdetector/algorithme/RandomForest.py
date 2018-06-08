@@ -4,9 +4,11 @@ from sklearn.metrics import accuracy_score, precision_score,recall_score, f1_sco
 
 
 class RandomForest:
-    def __init__(self, tr):
+    def __init__(self, tr, path_img):
         self.lR = RandomForestClassifier()
         self.tr = tr
+        self.path_img = path_img
+
 
     def result(self):
         X_train, X_test, Y_train, Y_test = self.tr.divide()

@@ -21,9 +21,15 @@ class Training:
         self.target = self.spambase_data[self.spambase_data.columns[-1]]  # la columns spam
         self.x = self.spambase_data.drop(self.spambase_data.columns[-1], axis=1)  # sans la columns spam
 
+    def getTarget(self):
+        return self.target
+
+    def getX(self):
+        return self.x
+
     def divide(self):
         X_train, X_test, Y_train, Y_test = train_test_split(self.x,
                                                             self.target,
-                                                            test_size=0.2,
-                                                            random_state=42)
+                                                            test_size=0.2,#0.2
+                                                            random_state=50)#42
         return X_train, X_test, Y_train, Y_test

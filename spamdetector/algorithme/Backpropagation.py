@@ -9,9 +9,10 @@ NB_TRAIN = (int)(4600 * 0.8)
 # TODO le temps pour chaque algo !!
 class Backpropagation:
 
-    def __init__(self, tr, file):
+    def __init__(self, tr, file_data, path_img):
         self.tr = tr
-        self.file = file
+        self.file_data = file_data
+        self.path_img = path_img
         self.X = []
         self.Y = []
 
@@ -22,12 +23,13 @@ class Backpropagation:
         return 1.0 / (1.0 + np.exp(-x))
 
     def data_file(self):
-        print("int data file!!")
+
         """
 
         :return: nb mails
         """
-        with open(self.file) as f:
+
+        with open(self.file_data) as f:
             for line in f:
                 curr = line.split(',')
                 new_curr = [1]
