@@ -16,7 +16,7 @@ class LogisticRegressionAlgo:
         self.lR.fit(self.X_train, self.Y_train)
         predict_lR = self.lR.predict(self.X_test)
 
-        print("************************* Random forest Results *****************************")
+        print("************************* Logistic Regression Results *****************************")
         print("matrice de confusion :")
         print(confusion_matrix(self.Y_test, predict_lR))
         print("rapport de classification :")

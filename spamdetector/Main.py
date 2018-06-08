@@ -26,7 +26,7 @@ if __name__ == '__main__':
     load_data = Load_data(clean_data)
 
     """Backpropagation"""
-    print("############LogisticRegression############")
+    print("############Backpropagation############")
     backpropagation = Backpropagation(training,FILE_spambase_data)
     backpropagation_acc = backpropagation.data_file()
 

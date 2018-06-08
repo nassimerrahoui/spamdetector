@@ -98,7 +98,7 @@ class Backpropagation:
         print("correct =", correct)
         print("accuracy = ", accuracy)
 
-        print("************************* Kernel SVM Results *****************************")
+        print("************************* Backpropagation Results *****************************")
         print("matrice de confusion :")
         print(confusion_matrix(Y_test, layer_2))
         print("rapport de classification :")
